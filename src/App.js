@@ -1,19 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 
+import  {Provider} from 'react-redux';
 import  Posts from  "./componets/Posts.js"
 import Postform from "./componets/Postform";
 
+import  store from "./Store.js"
 
-function App() {
-  return (
-    <div className="App">
-        <Postform/>
-     <Posts/>
+class  App extends React.Component{
+ render(){
+     return (
+         <Provider store ={store}>
+             <div className="App">
+                 <Postform/>
+                 <Posts/>
 
-    </div>
-  );
+             </div>
+         </Provider>
+     );
+
+ }
 }
 
 export default App;
